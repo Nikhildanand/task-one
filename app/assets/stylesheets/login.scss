@@ -1,0 +1,92 @@
+
+@import "custom_variables";
+
+.login-div{
+    width: 27%;
+    height: 50%;
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    color: white;
+
+    .fa-pos{
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 15%);
+        color: #fff;
+        text-shadow: 1px 1px 2px #AAA,
+                     2px 2px 4px #777;
+        font-size: 12rem !important;
+    }
+
+    input{$redcode: #d02552;
+    $lightbluecode: #4EB1BA;
+    $greencode: #2f4d28;
+    $bluecode: #2873b9; 
+    $yellowcode: #c7be43;
+    $ideblack: #2b2626;
+        background: $ideblack;
+        border: none;
+        width: 100%;
+        color: rgb(217, 249, 255) !important;
+        font-weight: bold;
+        font-size: 1.2rem;
+
+        &::-webkit-input-placeholder {
+            color: #AAA;
+        }
+
+        &:focus::-webkit-input-placeholder {
+            color: $greencode;
+        }
+
+        &:focus+.underline {
+            transform: scale(1);
+        }
+        &[type = "submit"]{
+            background: #5bc0de;
+        }
+    }
+
+    .underline {
+    background-color: dodgerblue;
+    display: inline-block;
+    height: 2px;
+    margin-top: -4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    width: 100%;
+    }
+
+    
+    .grid{
+        display: grid;
+        grid-template-columns: 1.5fr 3fr;
+        grid-gap: 1rem;
+        margin: 1rem 2rem;
+        padding-top: 4rem;
+        padding-right: 1.5rem;
+        font-size: 1.5rem;
+        color: $lightbluecode;
+        div:nth-child(even){
+            position: relative;
+        }
+        sup{
+        color: $redcode;
+        }
+    }
+
+}
+.ide h3{
+    text-align: center;
+    color: rgb(0, 255, 136);
+    text-shadow: 1px 1px 1px #00fff2;
+}
+
+

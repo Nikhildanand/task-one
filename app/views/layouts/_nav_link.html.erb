@@ -1,0 +1,35 @@
+<% url = request.original_url %>
+<% emp = admin_employee_url %>
+<% add_emp = admin_add_employee_url %>
+<% emp_dtl = admin_employee_details_url %>
+
+<ul class="nav navbar-nav navbar-right">
+    <% if yield(:name) == "admin" %>
+        <li class = <%=( url == admin_dashboard_url ) ? "active" : "" %> > 
+            <%= link_to "Home",  admin_dashboard_url %>
+        </li>
+        <li class= <%=( url == emp || url == add_emp || url == emp_dtl ) ? "active" : "" %> >
+            <%= link_to "Employee",  emp %>
+        </li>
+        <li class= <%=( url == "admin_employee_details_url") ? "active" : "" %> >
+            <%= link_to "Projects", "#" %>
+        </li>
+        <li>
+            <%= link_to "Log Out", "#" %>
+        </li>
+    <% elsif yield(:name) == "employee" %>
+        <li class=<%= ( url== employee_portal_dashboard_url ) ? "active" : "" %> >
+            <%= link_to "Home",  employee_portal_dashboard_url %>
+        </li>
+        <li class= <%= ( request.original_fullpath == employee_portal_path ) ? "active" : "" %> >
+            <%= link_to "Details",  employee_portal_path %>
+        </li>
+        <li>
+            <%= link_to "Log Out", "#" %>
+        </li>
+    <% end %>
+</ul>
+
+<!-- request.original_fullpath for getting just path of url from root url -->
+<!-- request.original_url for getting full url including root url -->
+

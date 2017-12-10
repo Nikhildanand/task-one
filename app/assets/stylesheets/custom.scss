@@ -1,0 +1,53 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import "font-awesome-sprockets";
+@import "font-awesome";
+@import "custom_variables";
+
+body{
+    background-image: url('developers.jpg'); 
+    background-size: cover; 
+    font-family: 'Source Code Pro', monospace;
+    background-attachment: fixed;
+}
+
+.navbar{
+    background: $ideblack;
+    opacity: 0.9;
+}
+header {
+    .container .navbar-header a{
+        color: $redcode;
+        font-weight: bold;
+        &:hover{
+            color: $redcode;
+            text-shadow: 1px 1px 1px #f31414;
+        }
+    }
+
+    .container .nav li a{
+        color: white;
+        font-weight: bolder;
+        &:hover{
+            font-weight:lighter;   
+            color: $oceancode;
+            text-shadow: 1px 1px 1px #00fff2,
+                         1px 2px 2px #fff;
+        }
+    }
+    .container .nav .active a{
+        background: $ideblack;
+        color: $oceancode;
+    }
+}
+
+.ide{
+    background-color: $ideblack;
+    padding: 1rem 1rem;
+    color: $bluecode;
+    box-shadow: 1px 2px 4px #706868,
+                2px 4px 8px #1a1818;
+    opacity: 0.9;
+}
+

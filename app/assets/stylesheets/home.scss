@@ -1,3 +1,16 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "custom_variables";
+
+.green{
+    color: $greencode;
+}
+
+h4 a{
+    color: $yellowcode;
+    &:hover{
+        text-decoration: none;
+        color: $lightbluecode;
+    }
+}
