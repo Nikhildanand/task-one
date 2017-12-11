@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get '/employee_portal', to: 'employee_portal#home'
 
-  get 'employee_portal/login'
+  root 'employee_portal#login'
 
   get 'employee_portal/dashboard'
 
@@ -15,6 +15,5 @@ Rails.application.routes.draw do
 
   get 'admin/employee_details'
 
-  root 'home#home'
 
 end
