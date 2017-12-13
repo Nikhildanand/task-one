@@ -15,5 +15,5 @@ Rails.application.routes.draw do
 
   get 'admin/employee_details'
 
-
+  resources :admins
 end

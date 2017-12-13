@@ -25,5 +25,4 @@ class AdminControllerTest < ActionDispatch::IntegrationTest
     get admin_employee_details_url
     assert_response :success
   end
-
 end

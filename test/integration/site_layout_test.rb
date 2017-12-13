@@ -5,10 +5,13 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
 
   test "root link" do
     get root_path
-    assert_template 'home/home'
+    assert_template 'employee_portal/login'
     assert_select "a[href=?]", root_path
-    assert_select "a[href=?]", admin_login_url
-    assert_select "a[href=?]", employee_portal_login_url
+  end
+
+  test "admin login link" do
+    get admin_login_url
+    assert_template 'admin/login'
   end
 
   test "admin pages link" do

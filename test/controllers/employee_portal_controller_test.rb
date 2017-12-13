@@ -7,7 +7,7 @@ class EmployeePortalControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get login" do
-    get employee_portal_login_url
+    get root_url
     assert_response :success
   end
 
