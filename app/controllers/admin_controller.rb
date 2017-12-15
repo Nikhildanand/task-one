@@ -13,4 +13,7 @@ class AdminController < ApplicationController
 
   def employee_details
   end
+
+  def projects
+  end
 end

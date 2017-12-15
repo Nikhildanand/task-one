@@ -1,6 +1,26 @@
 
 @import "custom_variables";
 
+@mixin button_submit {
+    background: darken($color: $ideblack, $amount: 10%);
+    padding: 0.5rem 1.5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 1px 2px 3px lighten($color: $ideblack, $amount: 20%),
+                    2px 3px 4px lighten($color: $ideblack, $amount: 30%);
+
+    &:hover {
+    background: lighten($color: $ideblack, $amount: 10%);
+    padding: 0.5rem 1.5rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    color: white;
+    text-shadow: 1px 2px 3px darken($color: $ideblack, $amount: 20%),
+                    2px 3px 4px darken($color: $ideblack, $amount: 30%);
+    box-shadow: 1px 2px 3px darken($color: $ideblack, $amount: 20%),
+                    2px 3px 4px darken($color: $ideblack, $amount: 30%);
+    }
+}
 .login-div{
     width: 27%;
     height: 50%;
@@ -20,13 +40,13 @@
         font-size: 12rem !important;
     }
 
-    input{$redcode: #d02552;
-    $lightbluecode: #4EB1BA;
-    $greencode: #2f4d28;
-    $bluecode: #2873b9; 
-    $yellowcode: #c7be43;
-    $ideblack: #2b2626;
-        background: $ideblack;
+    .grid input{
+        background: darken($color: $ideblack, $amount: 10%);
+        padding: 0.5rem 1.5rem;
+        border-top-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        box-shadow: 1px 2px 3px lighten($color: $ideblack, $amount: 10%),
+                     2px 3px 4px lighten($color: $ideblack, $amount: 20%);
         border: none;
         width: 100%;
         color: rgb(217, 249, 255) !important;
@@ -44,13 +64,11 @@
         &:focus+.underline {
             transform: scale(1);
         }
-        &[type = "submit"]{
-            background: #5bc0de;
-        }
     }
+ 
 
-    .underline {
-    background-color: dodgerblue;
+    .grid .underline {
+    background-color: $oceancode;
     display: inline-block;
     height: 2px;
     margin-top: -4px;
@@ -61,25 +79,29 @@
     transform: scale(0, 1);
     -webkit-transition: all 0.2s linear;
     transition: all 0.2s linear;
-    width: 100%;
+    width: 98%;
     }
 
     
     .grid{
         display: grid;
         grid-template-columns: 1.5fr 3fr;
-        grid-gap: 1rem;
+        grid-column-gap: 0.5rem;
+        grid-row-gap: 1em;
         margin: 1rem 2rem;
         padding-top: 4rem;
         padding-right: 1.5rem;
         font-size: 1.5rem;
-        color: $lightbluecode;
+        color: $yellowcode;
         div:nth-child(even){
             position: relative;
         }
         sup{
         color: $redcode;
         }
+    }
+    form .btn {
+        @include button_submit;
     }
 
 }
@@ -89,4 +111,8 @@
     text-shadow: 1px 1px 1px #00fff2;
 }
 
-
+button {
+    @include button_submit;
+    color: $lightbluecode;
+    font-size: 2rem;
+}

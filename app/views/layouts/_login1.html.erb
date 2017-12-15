@@ -1,0 +1,25 @@
+<div class="ide login-div">
+    <div>
+        <% if yield(:page) == "employee_login" %>
+            <i class="fa fa-users fa-pos" aria-hidden="true"></i>
+            <h3>Employee Login</h3>
+        <% elsif yield(:page) == "admin_login" %>
+            <i class="fa fa-user fa-pos" aria-hidden="true"></i>
+            <h3>Admin Login</h3>
+        <% end %>
+    </div>
+    
+    <%= form_for( :session , url: admin_login_path ) do |f| %>
+        <div class="grid formgroup">
+            <div><%= f.label :name %><sup>*</sup>:</div>
+            <div><%= f.text_field :name%><span class="underline"></span></div>
+            
+
+            <div><%= f.label :password %><sup>*</sup>:</div>
+            <div><%= f.password_field :password %><span class="underline"></span></div>
+
+        </div>
+        <br />
+        <%= f.submit "Log in", class: "btn btn-lg col-sm-12 col-xs-12" %>
+    <% end %>    
+</div>

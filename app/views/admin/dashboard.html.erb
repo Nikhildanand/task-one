@@ -1,1 +1,10 @@
-<% provide(:name, "admin") %>
+<%= render 'layouts/admin_render' %>
+<% if logged_in? %>
+    <div class = "container ide admin_buttons">
+        <h3> Welcome <%= @current_user.name %> </h3>
+        <div class = "center">
+            <%= link_to '<button type="button">Employee</button>'.html_safe, admin_employee_url %>   
+            <%= link_to '<button type="button"">Projects</button>'.html_safe, admin_projects_url %>   
+        </div>
+    </div>
+<% end %>
