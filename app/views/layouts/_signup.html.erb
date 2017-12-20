@@ -1,0 +1,105 @@
+<div class="ide signup-div">
+    <div class="signup-grid">
+        <div>
+            <i class="fa fa-user fa-pos" aria-hidden="true"></i>
+            <h3>Employee Signup</h3>
+        </div>
+
+        <%= form_for( @employee, url: admin_add_employee_path ) do |f| %>
+            <div class="c">
+                <div class="grid formgroup">
+                    <div>
+                        <%= f.label :name %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.text_field :name %>
+                            <span class="underline"></span>
+                    </div>
+
+
+                    <div>
+                        <%= f.label :gender %>
+                            :</div>
+                    <div>
+                        <%= f.select :gender, options_for_select([["Male"],["Female"],["Other"]]) %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :designation %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.text_field :designation %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :phone %>
+                            :</div>
+                    <div>
+                        <%= f.text_field :phone %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :email %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.email_field :email %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :date_of_join %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.date_field :date_of_join %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :date_of_birth %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.date_field :date_of_birth %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :address %>
+                            :</div>
+                    <div>
+                        <%= f.text_area :address %>
+                        <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :active %>
+                            :</div>
+                    <div>
+                        <%= f.check_box :active %>
+                    </div>
+                    <div>
+                        <%= f.label :username %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.text_field :username %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :password %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.password_field :password %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :password_confirmation %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.password_field :password_confirmation %>
+                            <span class="underline"></span>
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <%= f.submit "Add Employee", class: "btn btn-lg col-sm-12 col-xs-12" %>
+                </div>
+            </div>
+            <% end %>
+
+    </div>
+</div>

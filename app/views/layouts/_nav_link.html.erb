@@ -8,10 +8,10 @@
         <li class = <%=( url == admin_dashboard_url ) ? "active" : "" %> > 
             <%= link_to "Home",  admin_dashboard_url %>
         </li>
-        <li class= <%=( url == emp || url == add_emp || url == emp_dtl ) ? "active" : "" %> >
+        <li class= <%=( url == emp || url == add_emp || url.include?(emp_dtl) ) ? "active" : "" %> >
             <%= link_to "Employee",  emp %>
         </li>
-        <li class= <%=( url == "admin_employee_details_url") ? "active" : "" %> >
+        <li class= <%=( url == admin_projects_url) ? "active" : "" %> >
             <%= link_to "Projects", admin_projects_url %>
         </li>
         <li>
@@ -25,7 +25,7 @@
             <%= link_to "Details",  employee_portal_path %>
         </li>
         <li>
-            <%= link_to "Log Out", logout_path, method: :delete %>
+            <%= link_to "Log Out", emplogout_path, method: :delete %>
         </li>
     <% end %>
 </ul>

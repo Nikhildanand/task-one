@@ -1,1 +1,20 @@
+
+
 <%= render 'layouts/admin_render' %>
+
+<div class = "container ide">
+    <div class = "grav" ><%= gravatar_for @empdtail %></div>
+    <h3 class = "text-center"><%= @empdtail.name %></h3>
+    <div class = "emp_dtail_grid">
+        <div><h4 class = "text-right">Employee ID :</h4></div>
+        <div><h4 class = "text-left">RP_<%= @empdtail.id %></h4></div>
+        <div><h4 class = "text-right">Employee Name :</h4></div>
+        <div><h4 class = "text-left"> <%= @empdtail.name %></h4></div>
+        <div><h4 class = "text-right">Employee Designation :</h4></div> 
+        <div><h4 class = "text-left"><%= @empdtail.designation %></h4></div>
+        <div><h4 class = "text-right">Phone :</h4></div>
+        <div><h4 class = "text-left"><%= @empdtail.phone %></h4></div>
+        <div><h4 class = "text-right">Address :</h4></div>
+        <div><h4 class = "text-left"><%= @empdtail.address.split(', ').join("<br>").html_safe %></h4></div>
+    </div>
+</div>

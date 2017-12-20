@@ -1,0 +1,3 @@
+nikhil:
+  name: Nikhil D Anand
+  password_digest: <%= Admin.digest('Ha66y@Air') %>

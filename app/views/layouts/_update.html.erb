@@ -1,0 +1,106 @@
+<div class="ide signup-div">
+    <div class="signup-grid">
+        <div>
+            <h3>Employee Update</h3>
+        </div>
+
+        <%= form_for(@employee, url: employee_portal_path(:id => @employee.id), method: :patch) do |f| %>
+            <div class="c">
+                <div class="grid formgroup">
+
+                    <div>
+                        <%= f.label :id %>
+                            :</div>
+                    <div>
+                        <%= f.text_field :id, :value => ("RP_#{@employee.id}"), :disabled => true %>
+                            <span class="underline"></span>
+                    </div>
+
+                    <div>
+                        <%= f.label :name %>
+                            :</div>
+                    <div>
+                        <%= f.text_field :name, :disabled => true %>
+                            <span class="underline"></span>
+                    </div>
+
+
+                    <div>
+                        <%= f.label :gender %>
+                            :</div>
+                    <div>
+                        <%= f.text_field :gender, :disabled => true %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :designation %>
+                            :</div>
+                    <div>
+                        <%= f.text_field :designation, :disabled => true %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :phone %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.text_field :phone %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :email %>
+                            :</div>
+                    <div>
+                        <%= f.email_field :email, :disabled => true %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :personal_email %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.email_field :personal_email %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :date_of_join %>
+                            :</div>
+                    <div>
+                        <%= f.date_field :date_of_join, :disabled => true %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :date_of_birth %>
+                            :</div>
+                    <div>
+                        <%= f.date_field :date_of_birth, :disabled => true %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :address %>
+                            <sup>*</sup>:</div>
+                    <div>
+                        <%= f.text_area :address %>
+                            <span class="underline"></span>
+                    </div>
+                    <div>
+                        <%= f.label :active %>
+                            :</div>
+                    <div>
+                        <%= f.check_box :active, :disabled => true %>
+                    </div>
+                    <div>
+                        <%= f.label :username %>
+                            :</div>
+                    <div>
+                        <%= f.text_field :username, :disabled => true %>
+                            <span class="underline"></span>
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <%= f.submit "Update", class: "btn btn-lg col-sm-12 col-xs-12" %>
+                </div>
+            </div>
+            <% end %>
+
+    </div>
+</div>

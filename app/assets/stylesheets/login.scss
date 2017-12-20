@@ -64,6 +64,13 @@
         &:focus+.underline {
             transform: scale(1);
         }
+        &[type = checkbox] {
+            position: absolute;
+            right: 10%;
+        }
+        .margin {
+            margin: 5rem;
+        }
     }
  
 
@@ -86,6 +93,7 @@
     .grid{
         display: grid;
         grid-template-columns: 1.5fr 3fr;
+        grid-template-rows: 1fr 1fr;
         grid-column-gap: 0.5rem;
         grid-row-gap: 1em;
         margin: 1rem 2rem;
@@ -105,6 +113,55 @@
     }
 
 }
+
+.signup-div{
+    @extend .login-div;
+    overflow: auto;
+    width: 45%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, 0%);
+    select {
+        background: darken($color: $ideblack, $amount: 10%);
+        padding: 0.5rem 1.5rem;
+        border-top-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        box-shadow: 1px 2px 3px lighten($color: $ideblack, $amount: 10%),
+                     2px 3px 4px lighten($color: $ideblack, $amount: 20%);
+        border: none;
+        width: 100%;
+        color: rgb(217, 249, 255) !important;
+        font-weight: bold;
+        font-size: 1.2rem;
+    }
+    textarea{
+        background: darken($color: $ideblack, $amount: 10%);
+        padding: 0.5rem 1.5rem;
+        border-top-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        box-shadow: 1px 2px 3px lighten($color: $ideblack, $amount: 10%),
+                     2px 3px 4px lighten($color: $ideblack, $amount: 20%);
+        border: none;
+        width: 100%;
+        color: rgb(217, 249, 255) !important;
+        font-weight: bold;
+        font-size: 1.2rem;
+        resize: vertical;
+    }
+    input[type="checkbox"]{
+        background: darken($color: $ideblack, $amount: 10%);
+        width: auto;
+        padding: none;
+        border: none;
+        position: relative;
+        left: 0%;
+    }
+    .input-grid{
+        grid-template-rows: 8fr 1fr;
+    }
+}
 .ide h3{
     text-align: center;
     color: rgb(0, 255, 136);
@@ -115,4 +172,28 @@ button {
     @include button_submit;
     color: $lightbluecode;
     font-size: 2rem;
+    border: none;
+}
+
+.button {
+    @extend button;
+    font-size: 1.5rem;
+    // background: lighten($color: $ideblack, $amount: 40%);
+    color: lighten($color: $oceancode, $amount: 20%);
+    text-shadow: 0.5px 0.5px 0.5px $greencode;
+    font-weight: bold;
+}
+
+.login-grid{
+    height: 50%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.input-grid{
+    display:grid;
+    grid-template-rows: 3fr 1fr 1.5fr;
+}
+
+ @media only screen and (max-height: 1000px) {
 }

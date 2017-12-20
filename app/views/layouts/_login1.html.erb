@@ -1,25 +1,70 @@
 <div class="ide login-div">
+<div class="login-grid">
     <div>
-        <% if yield(:page) == "employee_login" %>
-            <i class="fa fa-users fa-pos" aria-hidden="true"></i>
-            <h3>Employee Login</h3>
-        <% elsif yield(:page) == "admin_login" %>
+        <% if yield(:page) == "admin_login" %>
             <i class="fa fa-user fa-pos" aria-hidden="true"></i>
             <h3>Admin Login</h3>
-        <% end %>
     </div>
     
-    <%= form_for( :session , url: admin_login_path ) do |f| %>
-        <div class="grid formgroup">
-            <div><%= f.label :name %><sup>*</sup>:</div>
-            <div><%= f.text_field :name%><span class="underline"></span></div>
-            
+    <%= form_for( :session, url: admin_login_path ) do |f| %>
+        <div class = "input-grid">
+            <div class="grid formgroup">
+                <div><%= f.label :name %><sup>*</sup>:</div>
+                <div><%= f.text_field :name%><span class="underline"></span></div>
+                
 
-            <div><%= f.label :password %><sup>*</sup>:</div>
-            <div><%= f.password_field :password %><span class="underline"></span></div>
-
+                <div><%= f.label :password %><sup>*</sup>:</div>
+                <div><%= f.password_field :password %><span class="underline"></span></div>
+            </div>
+            <br />
+            <div class = "text-right">
+                <%= f.label :remember_me, class: "checkbox inline pos" do %>
+                <%= f.check_box :remember_me %>
+                    <span>Remember me</span>
+                    <% end %>
+            </div>
+            <div>
+                <%= f.submit "Log in", class: "btn btn-lg col-sm-12 col-xs-12" %>   
+            </div>
         </div>
-        <br />
-        <%= f.submit "Log in", class: "btn btn-lg col-sm-12 col-xs-12" %>
-    <% end %>    
+    <% end %>
+
+    <% elsif yield(:page) == "employee_login" %>
+            <i class="fa fa-users fa-pos" aria-hidden="true"></i>
+            <h3>Employee Login</h3>
+            <%= form_for( :session, url: employee_portal_login_path ) do |f| %>
+                <div class="input-grid">
+                    <div class="grid formgroup">
+                        <div>
+                            <%= f.label :username %>
+                                <sup>*</sup>:</div>
+                        <div>
+                            <%= f.text_field :username%>
+                                <span class="underline"></span>
+                        </div>
+            
+            
+                        <div>
+                            <%= f.label :password %>
+                                <sup>*</sup>:</div>
+                        <div>
+                            <%= f.password_field :password %>
+                                <span class="underline"></span>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="text-right">
+                        <%= f.label :remember_me, class: "checkbox inline pos" do %>
+                            <%= f.check_box :remember_me %>
+                                <span>Remember me</span>
+                                <% end %>
+                    </div>
+                    <div>
+                        <%= f.submit "Log in", class: "btn btn-lg col-sm-12 col-xs-12" %>
+                    </div>
+                </div>
+                <% end %>
+        <% end %>
+
+</div>
 </div>
