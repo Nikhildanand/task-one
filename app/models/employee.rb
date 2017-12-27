@@ -11,16 +11,16 @@ class Employee < ApplicationRecord
                     uniqueness: { case_sensitive: false }
     
     PHONE_REGEX = /\A([0-9]+){10}\z/
-    validates :phone, presence: true, format: {with: PHONE_REGEX}, uniqueness: true
+    validates :phone, format: {with: PHONE_REGEX}, uniqueness: true
 
     validates :date_of_join, presence: true
     validates :address, presence: true, length: { minimum: 21, maximum: 255 }
 
     has_secure_password
     VALID_PASSWORD_REGEX = /\A(?=.*[a-z])(?=.*[A-Z])(?=.*[\W])(?=.*[\d])[\S]{8,15}\z/
-    validates :password, format: { with: VALID_PASSWORD_REGEX }
+    validates :password, format: { with: VALID_PASSWORD_REGEX }, allow_nil: true
 
-    validates :active, presence: true
+
     
 
       # Returns the hash digest of the given string.

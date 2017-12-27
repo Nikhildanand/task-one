@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   patch '/admin/edit', to: 'admin#update'
   delete '/admin/delete', to: 'admin#destroy'
 
+
+  
   get '/employee_portal', to: 'employee_portal#home'
   patch '/employee_portal', to: 'employee_portal#update'
 

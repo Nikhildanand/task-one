@@ -42,7 +42,7 @@
                         <%= f.label :email %>
                             <sup>*</sup>:</div>
                     <div>
-                        <%= f.email_field :email %>
+                        <%= f.email_field :email, id: 'copy' %>
                             <span class="underline"></span>
                     </div>
                     <div>
@@ -76,7 +76,7 @@
                         <%= f.label :username %>
                             <sup>*</sup>:</div>
                     <div>
-                        <%= f.text_field :username %>
+                        <%= f.text_field :username, id: 'target' %>
                             <span class="underline"></span>
                     </div>
                     <div>
@@ -103,3 +103,11 @@
 
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+            $('#copy').blur(function () {
+                $('#target').val($(this).val());
+            });
+        });
+</script>

@@ -34,24 +34,14 @@ class AdminController < ApplicationController
   end
 
   def edit
+    redirect_to root_url unless logged_in?
     @employee = Employee.find(params[:id])
   end
 
   def update
     @employee = Employee.find(params[:id])
-   
-    if  ((params[:employee][:name]).blank? ? true : @employee.update_attribute(:name, params[:employee][:name])) && 
-        ((params[:employee][:gender]).blank? ? true : @employee.update_attribute(:gender, params[:employee][:gender])) && 
-        ((params[:employee][:designation]).blank? ? true : @employee.update_attribute(:designation, params[:employee][:designation])) && 
-        ((params[:employee][:phone]).blank? ? true : @employee.update_attribute(:phone, params[:employee][:phone])) && 
-        ((params[:employee][:email]).blank? ? true : @employee.update_attribute(:email, params[:employee][:email])) && 
-        ((params[:employee][:date_of_join]).blank? ? true : @employee.update_attribute(:date_of_join, params[:employee][:date_of_join])) && 
-        ((params[:employee][:date_of_birth]).blank? ? true : @employee.update_attribute(:date_of_birth, params[:employee][:date_of_birth])) && 
-        ((params[:employee][:active]).blank? ? true : @employee.update_attribute(:active, params[:employee][:active])) && 
-        ((params[:employee][:username]).blank? ? true : @employee.update_attribute(:username, params[:employee][:username])) && 
-        ((params[:employee][:personal_email]).blank? ? true : @employee.update_attribute(:personal_email, params[:employee][:personal_email])) && 
-        ((params[:employee][:address]).blank? ? true : @employee.update_attribute(:address, params[:employee][:address]))     
-      # Handle a successful update.
+  
+      if @employee.update_attributes(employee_update)
       redirect_to admin_employee_url
     else
       
@@ -69,6 +59,10 @@ class AdminController < ApplicationController
   def employee_params
     params.require(:employee).permit(:name, :email, :password,
                                   :password_confirmation, :gender, :designation, :phone, :date_of_join, :date_of_birth, :address, :active, :username)
+  end
+
+  def employee_update
+    params.require(:employee).permit(:name, :email, :gender, :designation, :phone, :date_of_join, :date_of_birth, :address, :active, :username, :personal_email)
   end
 
 end

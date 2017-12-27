@@ -13,6 +13,11 @@ gem 'jquery-rails', '4.3.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.7.0'
 gem "font-awesome-rails"
+gem 'carrierwave',             '1.1.0'
+gem 'mini_magick',             '4.7.0'
+gem 'fog-aws',                 '2.0.0'
+gem 'nokogiri',                '1.8.1'
+
 
 
 group :development, :test do
