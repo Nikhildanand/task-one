@@ -3,11 +3,24 @@
         <div>
             <h3>Employee Update</h3>
         </div>
-
         <%= form_for(@employee, url: employee_portal_path(:id => @employee.id), method: :patch) do |f| %>
-            
-            <div class="c">
+        
+        <div class="c">
+            <% if f.object.picture? %>
+                <%= image_tag @employee.picture.thumb.url, class: "image" %>
+            <% else %>
+            <span class = "image1">
+                <%= gravatar_for (@employee) %>
+            </span>
+            <% end %>
                 <div class="grid formgroup">
+
+                    <div>
+                    <%= f.label :picture %> :
+                    </div>
+                    <div>
+                        <%= f.file_field :picture %>
+                    </div>
 
                     <div>
                         <%= f.label :id %>

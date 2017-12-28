@@ -21,6 +21,7 @@ class Employee < ApplicationRecord
     validates :password, format: { with: VALID_PASSWORD_REGEX }, allow_nil: true
 
 
+    mount_uploader :picture, PictureUploader
     
 
       # Returns the hash digest of the given string.

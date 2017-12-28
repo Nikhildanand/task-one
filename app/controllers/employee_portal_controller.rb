@@ -13,14 +13,11 @@ class EmployeePortalController < ApplicationController
 
   def update
     @employee = Employee.find(params[:id])
-   
-
       if @employee.update_attributes(employee_params_with_pic)      
-      redirect_to employee_portal_dashboard_url
-    else
-      
-      render employee_portal_path
-    end
+        redirect_to employee_portal_dashboard_url
+      else 
+        render employee_portal_path
+      end
   end
 
   private

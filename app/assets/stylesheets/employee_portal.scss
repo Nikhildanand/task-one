@@ -5,3 +5,13 @@
 input:disabled {
     background: #dddddd;
 }
+
+.image{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.image1{
+    @extend .image;
+    left: 39%;
+}

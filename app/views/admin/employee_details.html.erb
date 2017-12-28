@@ -3,7 +3,13 @@
 <%= render 'layouts/admin_render' %>
 
 <div class = "container ide">
-    <div class = "grav" ><%= gravatar_for @empdtail %></div>
+    <div class="grav">
+    <% if @empdtail.picture.blank? %>
+    <%= gravatar_for @empdtail %>
+    <% else %>
+    <%= image_tag @empdtail.picture.thumb.url %>
+    <% end %>
+    </div>
     <h3 class = "text-center"><%= @empdtail.name %></h3>
     <div class = "emp_dtail_grid">
         <div><h4 class = "text-right">Employee ID :</h4></div>
